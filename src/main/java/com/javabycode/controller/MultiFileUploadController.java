@@ -31,7 +31,7 @@ public class MultiFileUploadController {
 
     @ModelAttribute
     public MultiFileModel multiFileModel(){
-        return new MultiFileModel(3);
+        return new MultiFileModel(1);
     }
 
     @InitBinder
@@ -42,7 +42,7 @@ public class MultiFileUploadController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model){
     	
-    	model.addAttribute("multiFileModel", new MultiFileModel(3));
+    	model.addAttribute("multiFileModel", new MultiFileModel(1));
 
     	return "index";
     }
@@ -63,7 +63,7 @@ public class MultiFileUploadController {
         for (FileModel model : models.getFiles()){
             MultipartFile file = model.getFile();
             InputStream in = file.getInputStream();
-            File destination = new File("/tmp/" + file.getOriginalFilename());
+            File destination = new File("/Users/fhdone/Downloads/" + file.getOriginalFilename());
             FileUtils.copyInputStreamToFile(in, destination);
 
             files[index] = file.getOriginalFilename();
