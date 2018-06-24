@@ -16,10 +16,17 @@
    		<downloadSources>true</downloadSources>
 		<downloadJavadocs>true</downloadJavadocs>
         <encoding>UTF-8</encoding>
-        <spring.version>4.3.0.RELEASE</spring.version>
+        <spring.version>4.3.13.RELEASE</spring.version>
     </properties>
 
     <dependencies>
+    
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.7.25</version>
+		</dependency>
+
         <!-- spring dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
